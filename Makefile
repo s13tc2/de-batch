@@ -1,13 +1,16 @@
 ####################################################################################################################
 # Setup containers to run Airflow
 
+get-data:
+	rm -rf ./data && python3 scripts/get_data.py && chmod -R u=rwx,g=rwx,o=rwx data
+
 docker-spin-up:
 	docker compose --env-file env up airflow-init && docker compose --env-file env up --build -d
 
 perms:
 	sudo mkdir -p logs plugins temp dags tests migrations && sudo chmod -R u=rwx,g=rwx,o=rwx logs plugins temp dags tests migrations
 
-up: perms docker-spin-up warehouse-migration
+up: get-data perms docker-spin-up 
 
 down:
 	docker compose down

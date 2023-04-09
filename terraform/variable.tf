@@ -37,5 +37,5 @@ variable "alert_email_id" {
 variable "repo_url" {
   description = "Repository url to clone into production machine"
   type        = string
-  default     = ""
+  default     = "https://github.com/s13tc2/de-batch.git"
 }

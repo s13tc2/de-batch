@@ -9,6 +9,10 @@ from airflow.models import Variable
 from airflow.operators.python import PythonOperator
 from config import CFG
 
+os.environ['AWS_ACCESS_KEY_ID'] = CFG.AWS_ACCESS_KEY_ID
+os.environ['AWS_SECRET_ACCESS_KEY'] = CFG.AWS_SECRET_ACCESS_KEY
+os.environ['AWS_REGION'] = "us-east-1"
+
 # Config
 BUCKET_NAME = Variable.get("BUCKET")
 print('BUCKET_NAME: ', BUCKET_NAME)
