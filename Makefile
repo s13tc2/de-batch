@@ -10,7 +10,7 @@ docker-spin-up:
 perms:
 	sudo mkdir -p logs plugins temp dags tests migrations && sudo chmod -R u=rwx,g=rwx,o=rwx logs plugins temp dags tests migrations
 
-up: get-data perms docker-spin-up 
+up: perms docker-spin-up get-data
 
 down:
 	docker compose down
