@@ -3,7 +3,6 @@ import pathlib
 import numpy as np
 import pandas as pd
 from fredapi import Fred
-# from config import CFG
 
 pathlib.Path("./data").mkdir(parents=True, exist_ok=True)
 
