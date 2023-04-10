@@ -2,7 +2,7 @@
 # Setup containers to run Airflow
 
 get-data:
-	python3 scripts/get_data.py && chmod -R u=rwx,g=rwx,o=rwx data
+	python3 scripts/get_data.py 
 
 docker-spin-up:
 	docker compose --env-file env up airflow-init && docker compose --env-file env up --build -d
