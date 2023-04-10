@@ -2,7 +2,7 @@
 # Setup containers to run Airflow
 
 get-data:
-	chmod o+w /home/ubuntu/de-batch/data && python3 scripts/get_data.py 
+	python3 scripts/get_data.py 
 
 docker-spin-up:
 	docker compose --env-file env up airflow-init && docker compose --env-file env up --build -d
